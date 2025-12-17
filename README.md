@@ -37,6 +37,22 @@ Comfortable jumping between backend APIs, modern frontends and cross-platform mo
 
 ---
 
+## ☁️ Cloud & DevOps
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=docker,kubernetes,git,github,linux,aws,gcp,azure,firebase,vercel,netlify,heroku" alt="Cloud & DevOps" />
+</div>
+
+---
+
+## 🔧 Tools & Others
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=vscode,androidstudio,figma,postman,powershell,nginx" alt="Tools & Others" />
+</div>
+
+---
+
 ## 📊 GitHub Stats
 
 <div align="center">
