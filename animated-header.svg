@@ -1,0 +1,86 @@
+<svg width="1200" height="220" viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Neon glow -->
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Pac-Man mouth animation -->
+    <clipPath id="pacman-mouth">
+      <animate attributeName="d"
+               dur="0.4s"
+               repeatCount="indefinite"
+               values="
+                 M0,0 L50,-35 A70,70 0 1,1 50,35 Z;
+                 M0,0 L70,-5 A70,70 0 1,1 70,5 Z;
+                 M0,0 L50,-35 A70,70 0 1,1 50,35 Z
+               "
+               attributeType="XML"
+               fill="freeze"/>
+      <path d="M0,0 L50,-35 A70,70 0 1,1 50,35 Z" />
+    </clipPath>
+
+    <!-- Dots -->
+    <circle id="dot" r="6" fill="#f1f5f9" />
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="220" fill="#020617" />
+
+  <!-- Pac-Man -->
+  <g transform="translate(120,110)">
+    <circle r="70" fill="#facc15" clip-path="url(#pacman-mouth)" filter="url(#neon)" />
+    <circle cx="20" cy="-25" r="8" fill="#020617" />
+  </g>
+
+  <!-- Moving dots -->
+  <g id="dots" transform="translate(0,110)">
+    <use href="#dot" x="260" />
+    <use href="#dot" x="320" />
+    <use href="#dot" x="380" />
+    <use href="#dot" x="440" />
+    <use href="#dot" x="500" />
+    <use href="#dot" x="560" />
+    <use href="#dot" x="620" />
+    <use href="#dot" x="680" />
+    <use href="#dot" x="740" />
+    <animateTransform attributeName="transform"
+                      type="translate"
+                      from="0 0"
+                      to="-520 0"
+                      dur="3s"
+                      repeatCount="indefinite" />
+  </g>
+
+  <!-- Neon grid line -->
+  <line x1="0" y1="180" x2="1200" y2="180"
+        stroke="#22d3ee" stroke-width="2"
+        stroke-dasharray="6 10" filter="url(#neon)">
+    <animate attributeName="stroke-dashoffset"
+             from="0" to="-80"
+             dur="1.2s"
+             repeatCount="indefinite" />
+  </line>
+
+  <!-- Neon title text -->
+  <g filter="url(#neon)">
+    <text x="320" y="95"
+          fill="#22d3ee"
+          font-size="46"
+          font-family="Consolas, monospace"
+          letter-spacing="4">
+      ALION • FULL STACK
+    </text>
+
+    <text x="320" y="140"
+          fill="#4ade80"
+          font-size="20"
+          font-family="Consolas, monospace">
+      Python · PHP · JS · Node · React · Next · Flutter
+    </text>
+  </g>
+</svg>
